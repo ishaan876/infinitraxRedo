@@ -27,8 +27,8 @@ let get = (key) => {
 
 let post = (dataObj) => {
     let allDataString = fs.readFileSync("database.txt", "utf8")
-    let allData = JSON.parse(allDataString)
-    let allData = Object.assign(allData, dataObj)
+    let allData = JSON.parse(allDataString)   
+    let Alldata = Object.assign(allData, dataObj)
     fs.writeFileSync("database.txt", json.stringify(addData), "utf8")
 
 }
