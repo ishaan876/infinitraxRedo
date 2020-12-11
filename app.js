@@ -1,18 +1,20 @@
-const express = require('express');
-const app = express();
-const db = ("./databse.js")
-const fitbit = ('fitbit-node ')
+let http = require ('http')
 
+let handler = (request, response) => {
+    console.log(`
 
+    REQUEST
+    ========
+    METHOD: ${request.method}
+    RESPONSE: ${request.url}
+    HEADERS: 
+    `)
 
+    console.log(request.headers)
+    response.statusCode(200)
+    response.write("OK")
+    response.end()
+}
 
-
-app.get('/', (req,res) => {
-    res.end("test")
-})
-
-app.get('/Diet', (req,res) => {
-    res.end('diets are lame')
-})
-
-app.listen(3000)
+let server = http.createServer(handler)
+server.listen(3000)
