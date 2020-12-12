@@ -1,13 +1,25 @@
 
-let runAll = async () => {
-    await fetch("http://localhost:3000/?key=Ishaan",{
-        method: "get"
-    })
+// let runAll = async () => {
+//     await fetch("http://localhost:3000/?key=Ishaan",{
+//         method: "get"
+//     })
 
-    let data = await res.json()
+import { fstat, writeFileSync } from "fs"
 
-    console.log(res.json)
+//     let data = await res.json()
+
+//     console.log(res.json)
+// }
+
+// runAll()
+
+let data = {
+    "Ishaan": {
+        hp: 1,
+        age:10        
+    }
 }
 
-runAll()
+function postOne(data)
 
+fs.writeFileSync("data.txt", data, "utf8")
